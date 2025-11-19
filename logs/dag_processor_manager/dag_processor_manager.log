@@ -3815,3 +3815,33 @@ File Path                            PID    Runtime      # DAGs    # Errors  Las
 ================================================================================
 [2025-11-19T16:48:29.015+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
 [2025-11-19T16:48:29.035+0000] {manager.py:740} INFO - There are 3 files in /opt/airflow/dags
+[2025-11-19T16:48:48.228+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dbt_finance.py                              1           0  0.17s           2025-11-19T16:48:28
+/opt/airflow/dags/data_ingestion.py                           1           0  0.17s           2025-11-19T16:48:27
+/opt/airflow/dags/utils/__init__.py                           0           0  0.06s           2025-11-19T16:48:28
+================================================================================
+[2025-11-19T16:49:18.704+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dbt_finance.py                              1           0  0.16s           2025-11-19T16:48:58
+/opt/airflow/dags/data_ingestion.py                           1           0  0.16s           2025-11-19T16:48:58
+/opt/airflow/dags/utils/__init__.py                           0           0  0.06s           2025-11-19T16:48:58
+================================================================================
+[2025-11-19T16:49:49.270+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion.py                           1           0  0.16s           2025-11-19T16:49:29
+/opt/airflow/dags/dbt_finance.py                              1           0  0.16s           2025-11-19T16:49:29
+/opt/airflow/dags/utils/__init__.py                           0           0  0.07s           2025-11-19T16:49:29
+================================================================================
