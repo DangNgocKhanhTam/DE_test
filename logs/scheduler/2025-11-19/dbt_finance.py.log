@@ -1059,3 +1059,38 @@ ModuleNotFoundError: No module named 'airflow.providers.bash'
 [2025-11-19T14:54:55.018+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:54:55.018+0000] {dag.py:3089} INFO - Sync 1 DAGs
 [2025-11-19T14:54:55.103+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:54:55.103+0000] {dag.py:3947} INFO - Setting next_dagrun for dbt_finance to 2025-11-19 00:00:00+00:00, run_after=2025-11-20 00:00:00+00:00
 [2025-11-19T14:54:55.141+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dbt_finance.py took 0.230 seconds
+[2025-11-19T14:55:25.430+0000] {processor.py:161} INFO - Started process (PID=1350) to work on /opt/airflow/dags/dbt_finance.py
+[2025-11-19T14:55:25.432+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dbt_finance.py for tasks to queue
+[2025-11-19T14:55:25.433+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:55:25.433+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dbt_finance.py
+[2025-11-19T14:55:25.450+0000] {processor.py:840} INFO - DAG(s) 'dbt_finance' retrieved from /opt/airflow/dags/dbt_finance.py
+[2025-11-19T14:55:25.487+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:55:25.486+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-19T14:55:25.519+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:55:25.519+0000] {dag.py:3947} INFO - Setting next_dagrun for dbt_finance to 2025-11-19 00:00:00+00:00, run_after=2025-11-20 00:00:00+00:00
+[2025-11-19T14:55:25.561+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dbt_finance.py took 0.138 seconds
+[2025-11-19T14:55:55.933+0000] {processor.py:161} INFO - Started process (PID=1365) to work on /opt/airflow/dags/dbt_finance.py
+[2025-11-19T14:55:55.936+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dbt_finance.py for tasks to queue
+[2025-11-19T14:55:55.937+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:55:55.937+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dbt_finance.py
+[2025-11-19T14:55:55.958+0000] {processor.py:840} INFO - DAG(s) 'dbt_finance' retrieved from /opt/airflow/dags/dbt_finance.py
+[2025-11-19T14:55:55.994+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:55:55.993+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-19T14:55:56.035+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:55:56.035+0000] {dag.py:3947} INFO - Setting next_dagrun for dbt_finance to 2025-11-19 00:00:00+00:00, run_after=2025-11-20 00:00:00+00:00
+[2025-11-19T14:55:56.067+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dbt_finance.py took 0.141 seconds
+[2025-11-19T14:56:26.423+0000] {processor.py:161} INFO - Started process (PID=1380) to work on /opt/airflow/dags/dbt_finance.py
+[2025-11-19T14:56:26.426+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dbt_finance.py for tasks to queue
+[2025-11-19T14:56:26.427+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:56:26.427+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dbt_finance.py
+[2025-11-19T14:56:26.444+0000] {processor.py:840} INFO - DAG(s) 'dbt_finance' retrieved from /opt/airflow/dags/dbt_finance.py
+[2025-11-19T14:56:26.479+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:56:26.478+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-19T14:56:26.513+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:56:26.512+0000] {dag.py:3947} INFO - Setting next_dagrun for dbt_finance to 2025-11-19 00:00:00+00:00, run_after=2025-11-20 00:00:00+00:00
+[2025-11-19T14:56:26.543+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dbt_finance.py took 0.127 seconds
+[2025-11-19T14:56:56.919+0000] {processor.py:161} INFO - Started process (PID=1395) to work on /opt/airflow/dags/dbt_finance.py
+[2025-11-19T14:56:56.920+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dbt_finance.py for tasks to queue
+[2025-11-19T14:56:56.921+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:56:56.921+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dbt_finance.py
+[2025-11-19T14:56:56.939+0000] {processor.py:840} INFO - DAG(s) 'dbt_finance' retrieved from /opt/airflow/dags/dbt_finance.py
+[2025-11-19T14:56:56.971+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:56:56.970+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-19T14:56:57.000+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:56:56.999+0000] {dag.py:3947} INFO - Setting next_dagrun for dbt_finance to 2025-11-19 00:00:00+00:00, run_after=2025-11-20 00:00:00+00:00
+[2025-11-19T14:56:57.030+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dbt_finance.py took 0.118 seconds
+[2025-11-19T14:57:27.366+0000] {processor.py:161} INFO - Started process (PID=1410) to work on /opt/airflow/dags/dbt_finance.py
+[2025-11-19T14:57:27.368+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dbt_finance.py for tasks to queue
+[2025-11-19T14:57:27.369+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:57:27.369+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dbt_finance.py
+[2025-11-19T14:57:27.387+0000] {processor.py:840} INFO - DAG(s) 'dbt_finance' retrieved from /opt/airflow/dags/dbt_finance.py
+[2025-11-19T14:57:27.456+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:57:27.456+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-19T14:57:27.494+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:57:27.494+0000] {dag.py:3947} INFO - Setting next_dagrun for dbt_finance to 2025-11-19 00:00:00+00:00, run_after=2025-11-20 00:00:00+00:00
+[2025-11-19T14:57:27.526+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dbt_finance.py took 0.171 seconds

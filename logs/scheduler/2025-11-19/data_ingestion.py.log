@@ -1038,3 +1038,38 @@ ModuleNotFoundError: No module named 'airflow.providers.bash'
 [2025-11-19T14:54:54.963+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:54:54.963+0000] {dag.py:3089} INFO - Sync 1 DAGs
 [2025-11-19T14:54:55.008+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:54:55.007+0000] {dag.py:3947} INFO - Setting next_dagrun for data_ingestion to 2025-11-19 00:00:00+00:00, run_after=2025-11-20 00:00:00+00:00
 [2025-11-19T14:54:55.092+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_ingestion.py took 0.195 seconds
+[2025-11-19T14:55:25.419+0000] {processor.py:161} INFO - Started process (PID=1347) to work on /opt/airflow/dags/data_ingestion.py
+[2025-11-19T14:55:25.421+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_ingestion.py for tasks to queue
+[2025-11-19T14:55:25.423+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:55:25.422+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_ingestion.py
+[2025-11-19T14:55:25.435+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion' retrieved from /opt/airflow/dags/data_ingestion.py
+[2025-11-19T14:55:25.475+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:55:25.474+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-19T14:55:25.504+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:55:25.504+0000] {dag.py:3947} INFO - Setting next_dagrun for data_ingestion to 2025-11-19 00:00:00+00:00, run_after=2025-11-20 00:00:00+00:00
+[2025-11-19T14:55:25.543+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_ingestion.py took 0.131 seconds
+[2025-11-19T14:55:55.923+0000] {processor.py:161} INFO - Started process (PID=1362) to work on /opt/airflow/dags/data_ingestion.py
+[2025-11-19T14:55:55.925+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_ingestion.py for tasks to queue
+[2025-11-19T14:55:55.926+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:55:55.926+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_ingestion.py
+[2025-11-19T14:55:55.940+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion' retrieved from /opt/airflow/dags/data_ingestion.py
+[2025-11-19T14:55:55.982+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:55:55.981+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-19T14:55:56.011+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:55:56.011+0000] {dag.py:3947} INFO - Setting next_dagrun for data_ingestion to 2025-11-19 00:00:00+00:00, run_after=2025-11-20 00:00:00+00:00
+[2025-11-19T14:55:56.051+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_ingestion.py took 0.137 seconds
+[2025-11-19T14:56:26.415+0000] {processor.py:161} INFO - Started process (PID=1377) to work on /opt/airflow/dags/data_ingestion.py
+[2025-11-19T14:56:26.417+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_ingestion.py for tasks to queue
+[2025-11-19T14:56:26.418+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:56:26.418+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_ingestion.py
+[2025-11-19T14:56:26.430+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion' retrieved from /opt/airflow/dags/data_ingestion.py
+[2025-11-19T14:56:26.465+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:56:26.464+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-19T14:56:26.499+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:56:26.499+0000] {dag.py:3947} INFO - Setting next_dagrun for data_ingestion to 2025-11-19 00:00:00+00:00, run_after=2025-11-20 00:00:00+00:00
+[2025-11-19T14:56:26.530+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_ingestion.py took 0.123 seconds
+[2025-11-19T14:56:56.908+0000] {processor.py:161} INFO - Started process (PID=1392) to work on /opt/airflow/dags/data_ingestion.py
+[2025-11-19T14:56:56.909+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_ingestion.py for tasks to queue
+[2025-11-19T14:56:56.911+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:56:56.910+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_ingestion.py
+[2025-11-19T14:56:56.921+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion' retrieved from /opt/airflow/dags/data_ingestion.py
+[2025-11-19T14:56:56.957+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:56:56.957+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-19T14:56:56.985+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:56:56.985+0000] {dag.py:3947} INFO - Setting next_dagrun for data_ingestion to 2025-11-19 00:00:00+00:00, run_after=2025-11-20 00:00:00+00:00
+[2025-11-19T14:56:57.012+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_ingestion.py took 0.113 seconds
+[2025-11-19T14:57:27.354+0000] {processor.py:161} INFO - Started process (PID=1407) to work on /opt/airflow/dags/data_ingestion.py
+[2025-11-19T14:57:27.355+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_ingestion.py for tasks to queue
+[2025-11-19T14:57:27.358+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:57:27.358+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_ingestion.py
+[2025-11-19T14:57:27.373+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion' retrieved from /opt/airflow/dags/data_ingestion.py
+[2025-11-19T14:57:27.443+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:57:27.442+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-19T14:57:27.482+0000] {logging_mixin.py:188} INFO - [2025-11-19T14:57:27.482+0000] {dag.py:3947} INFO - Setting next_dagrun for data_ingestion to 2025-11-19 00:00:00+00:00, run_after=2025-11-20 00:00:00+00:00
+[2025-11-19T14:57:27.515+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_ingestion.py took 0.171 seconds
