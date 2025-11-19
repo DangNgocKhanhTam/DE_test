@@ -1589,3 +1589,127 @@ File Path                            PID    Runtime      # DAGs    # Errors  Las
 /opt/airflow/dags/data_ingestion.py                           1           0  0.14s           2025-11-19T14:56:57
 /opt/airflow/dags/utils/__init__.py                           0           0  0.07s           2025-11-19T14:56:57
 ================================================================================
+[2025-11-19T14:57:56.867+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion.py                           1           0  0.20s           2025-11-19T14:57:27
+/opt/airflow/dags/dbt_finance.py                              1           0  0.20s           2025-11-19T14:57:27
+/opt/airflow/dags/utils/__init__.py                           0           0  0.06s           2025-11-19T14:57:27
+================================================================================
+[2025-11-19T14:58:19.347+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-19T14:58:19.363+0000] {manager.py:740} INFO - There are 3 files in /opt/airflow/dags
+[2025-11-19T14:58:27.453+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dbt_finance.py                              1           0  0.22s           2025-11-19T14:57:58
+/opt/airflow/dags/data_ingestion.py                           1           0  0.21s           2025-11-19T14:57:58
+/opt/airflow/dags/utils/__init__.py                           0           0  0.08s           2025-11-19T14:57:58
+================================================================================
+[2025-11-19T14:58:57.948+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion.py                           1           0  0.15s           2025-11-19T14:58:28
+/opt/airflow/dags/dbt_finance.py                              1           0  0.15s           2025-11-19T14:58:28
+/opt/airflow/dags/utils/__init__.py                           0           0  0.05s           2025-11-19T14:58:28
+================================================================================
+[2025-11-19T14:59:28.435+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion.py                           1           0  0.17s           2025-11-19T14:58:59
+/opt/airflow/dags/dbt_finance.py                              1           0  0.16s           2025-11-19T14:58:59
+/opt/airflow/dags/utils/__init__.py                           0           0  0.06s           2025-11-19T14:58:59
+================================================================================
+[2025-11-19T14:59:58.850+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion.py                           1           0  0.14s           2025-11-19T14:59:29
+/opt/airflow/dags/dbt_finance.py                              1           0  0.14s           2025-11-19T14:59:29
+/opt/airflow/dags/utils/__init__.py                           0           0  0.05s           2025-11-19T14:59:29
+================================================================================
+[2025-11-19T15:00:29.342+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dbt_finance.py                              1           0  0.15s           2025-11-19T15:00:00
+/opt/airflow/dags/data_ingestion.py                           1           0  0.14s           2025-11-19T15:00:00
+/opt/airflow/dags/utils/__init__.py                           0           0  0.05s           2025-11-19T15:00:00
+================================================================================
+[2025-11-19T15:00:59.802+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion.py                           1           0  0.14s           2025-11-19T15:00:30
+/opt/airflow/dags/dbt_finance.py                              1           0  0.14s           2025-11-19T15:00:30
+/opt/airflow/dags/utils/__init__.py                           0           0  0.05s           2025-11-19T15:00:30
+================================================================================
+[2025-11-19T15:01:30.362+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion.py                           1           0  0.16s           2025-11-19T15:01:00
+/opt/airflow/dags/dbt_finance.py                              1           0  0.16s           2025-11-19T15:01:00
+/opt/airflow/dags/utils/__init__.py                           0           0  0.05s           2025-11-19T15:01:01
+================================================================================
+[2025-11-19T15:02:00.839+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion.py                           1           0  0.16s           2025-11-19T15:01:31
+/opt/airflow/dags/dbt_finance.py                              1           0  0.16s           2025-11-19T15:01:31
+/opt/airflow/dags/utils/__init__.py                           0           0  0.05s           2025-11-19T15:01:31
+================================================================================
+[2025-11-19T15:02:31.276+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion.py                           1           0  0.15s           2025-11-19T15:02:02
+/opt/airflow/dags/dbt_finance.py                              1           0  0.14s           2025-11-19T15:02:02
+/opt/airflow/dags/utils/__init__.py                           0           0  0.05s           2025-11-19T15:02:02
+================================================================================
+[2025-11-19T15:03:01.766+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion.py                           1           0  0.19s           2025-11-19T15:02:32
+/opt/airflow/dags/dbt_finance.py                              1           0  0.18s           2025-11-19T15:02:32
+/opt/airflow/dags/utils/__init__.py                           0           0  0.05s           2025-11-19T15:02:32
+================================================================================
+[2025-11-19T15:03:20.115+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-19T15:03:20.128+0000] {manager.py:740} INFO - There are 3 files in /opt/airflow/dags
+[2025-11-19T15:03:32.297+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dbt_finance.py                              1           0  0.15s           2025-11-19T15:03:02
+/opt/airflow/dags/data_ingestion.py                           1           0  0.15s           2025-11-19T15:03:02
+/opt/airflow/dags/utils/__init__.py                           0           0  0.06s           2025-11-19T15:03:03
+================================================================================
