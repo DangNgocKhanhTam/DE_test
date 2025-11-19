@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: fct_transactions
+    description: "Fact table: All transactions with USD values and historical KYC levels"
+    columns:
+      - name: txn_id
+        description: "Unique transaction identifier"
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: "User who made the transaction"
+      - name: kyc_level_at_transaction
+        description: "KYC level of user at the time of transaction (historical)"
+      - name: transaction_date
+        description: "Date of transaction"
+  
+  - name: dim_users
+    description: "Dimension table: Users with SCD Type 2 for historical KYC tracking"
+    columns:
+      - name: user_kyc_key
+        description: "Surrogate key - unique identifier for each user-kyc period"
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: "Natural key - user identifier"
+        tests:
+          - not_null
+      - name: kyc_level
+        description: "KYC verification level"
+        tests:
+          - not_null
+      - name: effective_from
+        description: "Start of effective period (when this kyc_level became active)"
+        tests:
+          - not_null
+      - name: effective_to
+        description: "End of effective period (when kyc_level changed, or 9999-12-31 for current)"
+        tests:
+          - not_null
+      - name: is_current
+        description: "Whether this is the current record"
+      - name: duration_seconds
+        description: "Duration of this kyc_level period in seconds"
+  
+  - name: dim_currencies
+    description: "Dimension table: Unique currencies"
+    columns:
+      - name: currency
+        description: "Currency code"
+        tests:
+          - unique
+          - not_null
+  
+  - name: dim_date
+    description: "Dimension table: Date dimension for time-based analysis"
+    columns:
+      - name: date
+        description: "Date"
+        tests:
+          - unique
+          - not_null
+

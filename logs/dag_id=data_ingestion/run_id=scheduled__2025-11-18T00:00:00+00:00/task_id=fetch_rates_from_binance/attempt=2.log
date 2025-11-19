@@ -1,0 +1,40 @@
+[2025-11-19T11:38:20.332+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-19T11:38:20.399+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion.fetch_rates_from_binance scheduled__2025-11-18T00:00:00+00:00 [queued]>
+[2025-11-19T11:38:20.412+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion.fetch_rates_from_binance scheduled__2025-11-18T00:00:00+00:00 [queued]>
+[2025-11-19T11:38:20.413+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 4
+[2025-11-19T11:38:20.453+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): fetch_rates_from_binance> on 2025-11-18 00:00:00+00:00
+[2025-11-19T11:38:20.464+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=255) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-19T11:38:20.466+0000] {standard_task_runner.py:64} INFO - Started process 256 to run task
+[2025-11-19T11:38:20.464+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion', 'fetch_rates_from_binance', 'scheduled__2025-11-18T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion.py', '--cfg-path', '/tmp/tmpulr5j6oq']
+[2025-11-19T11:38:20.467+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask fetch_rates_from_binance
+[2025-11-19T11:38:20.539+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion.fetch_rates_from_binance scheduled__2025-11-18T00:00:00+00:00 [running]> on host 5004021ba987
+[2025-11-19T11:38:20.675+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='tam.dang' AIRFLOW_CTX_DAG_ID='data_ingestion' AIRFLOW_CTX_TASK_ID='fetch_rates_from_binance' AIRFLOW_CTX_EXECUTION_DATE='2025-11-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-18T00:00:00+00:00'
+[2025-11-19T11:38:20.677+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-19T11:38:20.715+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-19T11:38:20.717+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/*** && python scripts/fetch_kline.py']
+[2025-11-19T11:38:20.764+0000] {subprocess.py:86} INFO - Output:
+[2025-11-19T11:38:23.538+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-11-19T11:38:23.539+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/fetch_kline.py", line 3, in <module>
+[2025-11-19T11:38:23.539+0000] {subprocess.py:93} INFO -     from binance.binance_api import BinanceAPI, datetime_to_timestamp_ms
+[2025-11-19T11:38:23.540+0000] {subprocess.py:93} INFO - ModuleNotFoundError: No module named 'binance'
+[2025-11-19T11:38:23.662+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-11-19T11:38:23.663+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-19T11:38:23.677+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-11-19T11:38:23.686+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=data_ingestion, task_id=fetch_rates_from_binance, run_id=scheduled__2025-11-18T00:00:00+00:00, execution_date=20251118T000000, start_date=20251119T113820, end_date=20251119T113823
+[2025-11-19T11:38:23.708+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 5 for task fetch_rates_from_binance (Bash command failed. The command returned a non-zero exit code 1.; 256)
+[2025-11-19T11:38:23.740+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-11-19T11:38:23.774+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-19T11:38:23.777+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

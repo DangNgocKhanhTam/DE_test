@@ -1,0 +1,48 @@
+[2025-11-19T11:44:03.895+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-19T11:44:03.939+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion.load_raw_data_to_bigquery scheduled__2025-11-18T00:00:00+00:00 [queued]>
+[2025-11-19T11:44:03.952+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion.load_raw_data_to_bigquery scheduled__2025-11-18T00:00:00+00:00 [queued]>
+[2025-11-19T11:44:03.953+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2025-11-19T11:44:03.969+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): load_raw_data_to_bigquery> on 2025-11-18 00:00:00+00:00
+[2025-11-19T11:44:03.980+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=237) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-19T11:44:03.981+0000] {standard_task_runner.py:64} INFO - Started process 238 to run task
+[2025-11-19T11:44:03.979+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion', 'load_raw_data_to_bigquery', 'scheduled__2025-11-18T00:00:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion.py', '--cfg-path', '/tmp/tmpas1suoc6']
+[2025-11-19T11:44:03.982+0000] {standard_task_runner.py:91} INFO - Job 8: Subtask load_raw_data_to_bigquery
+[2025-11-19T11:44:04.047+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion.load_raw_data_to_bigquery scheduled__2025-11-18T00:00:00+00:00 [running]> on host 5004021ba987
+[2025-11-19T11:44:04.156+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='tam.dang' AIRFLOW_CTX_DAG_ID='data_ingestion' AIRFLOW_CTX_TASK_ID='load_raw_data_to_bigquery' AIRFLOW_CTX_EXECUTION_DATE='2025-11-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-18T00:00:00+00:00'
+[2025-11-19T11:44:04.158+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-19T11:44:04.172+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-19T11:44:04.174+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/*** && PYTHONPATH=/opt/***:$PYTHONPATH python scripts/load_to_bigquery.py']
+[2025-11-19T11:44:04.182+0000] {subprocess.py:86} INFO - Output:
+[2025-11-19T11:44:19.469+0000] {subprocess.py:93} INFO - --------Dataset raw_data already exists---------
+[2025-11-19T11:44:19.472+0000] {subprocess.py:93} INFO - -------Loaded 1000 rows to cusma-383203.raw_data.transaction -----------
+[2025-11-19T11:44:19.475+0000] {subprocess.py:93} INFO - -------Loaded 273 rows to cusma-383203.raw_data.users -----------
+[2025-11-19T11:44:19.476+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/XLMUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.478+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/POLUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.479+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/AVAXUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.480+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/LINKUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.481+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/AXSUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.482+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/TRXUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.486+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/ADAUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.487+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/BTCUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.487+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/SUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.488+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/XTZUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.489+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/SHIBUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.490+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/UNIUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.491+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/SOLUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.492+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/BCHUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.493+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/DOGEUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.494+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/USDCUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.494+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/DOTUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.495+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/ETCUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.496+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/NEARUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.497+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/LTCUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.497+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/BNBUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.498+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/XRPUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.499+0000] {subprocess.py:93} INFO - ------Reading /opt/***/output/raw_rates/ETHUSDT.jsonl ... ---------
+[2025-11-19T11:44:19.499+0000] {subprocess.py:93} INFO - -------Loaded 103109 rows to cusma-383203.raw_data.rates -----------
+[2025-11-19T11:44:19.711+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-19T11:44:19.712+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-19T11:44:19.742+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_ingestion, task_id=load_raw_data_to_bigquery, run_id=scheduled__2025-11-18T00:00:00+00:00, execution_date=20251118T000000, start_date=20251119T114403, end_date=20251119T114419
+[2025-11-19T11:44:19.801+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-11-19T11:44:19.823+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-19T11:44:19.825+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

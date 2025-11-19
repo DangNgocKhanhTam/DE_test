@@ -1,0 +1,22 @@
+de_test_dwh:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: 'cusma-383203'
+      dataset: 'dwh_dev'
+      keyfile: 'config/service_account.json'
+      location: 'asia-southeast1'
+      priority: interactive
+      maximum_bytes_billed: 1000000000
+    prod:
+      type: bigquery
+      method: service-account
+      project: 'cusma-383203'
+      dataset: 'dwh_prod'
+      keyfile: 'config/service_account.json'
+      location: 'asia-southeast1'
+      priority: interactive
+      maximum_bytes_billed: 10000000000
+

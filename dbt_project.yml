@@ -1,0 +1,35 @@
+name: 'de_test_dwh'
+version: '1.0.0'
+config-version: 2
+
+profile: 'de_test_dwh'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  de_test_dwh:
+    finance:
+      staging:
+        +materialized: view
+        +schema: staging
+      intermediate:
+        +materialized: table
+        +schema: intermediate
+      marts:
+        +materialized: table
+        +schema: mart
+
+vars:
+  project_id: 'cusma-383203'
+  raw_dataset: 'raw_data'
+

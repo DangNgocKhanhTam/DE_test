@@ -1,10 +1,15 @@
-
 import pandas as pd
-from binance.binance_api import BinanceAPI, datetime_to_timestamp_ms
 from datetime import datetime
 import os
 from pathlib import Path
 import json
+import sys
+
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
+
+from binance.binance_api import BinanceAPI, datetime_to_timestamp_ms
 
 def read_transaction(file_path:str) -> pd.DataFrame:
     df = pd.read_csv(file_path)
@@ -88,18 +93,18 @@ def fetch_and_save_data (api: BinanceAPI, start_date: datetime, end_date: dateti
                         'taker_buy_base_volume': float(kline[9]),
                         'taker_buy_quote_volume': float(kline[10])
                     }
-                    f.write(json.dumps(kline_dict, indent=4) + "\n")
+                    f.write(json.dumps(kline_dict) + "\n")
                     saved_file += 1 
 
-                print(f'-----Saved {saved_file} klines in : {output_file}')
+            print(f'-----Saved {saved_file} klines in : {output_file}')
             
         except Exception as e : 
             print(f'--------Error in processing pair: {pair}: {e}')
             continue 
 
 def main(): 
-    transactions_file = 'transactions.csv' 
-    output_dir = 'data/raw_rates'
+    transactions_file = os.path.join('data', 'transactions.csv')
+    output_dir = 'output/raw_rates'
     try: 
         df = read_transaction(transactions_file)
     except FileExistsError:
@@ -125,6 +130,10 @@ def main():
     )
 
     print(f'--------Sucessfully fetch data in folder: {output_dir}/')
+
+    jsonl_file = [i for i in os.listdir(output_dir)]
+    print(f"-----Total JSONL files in '{output_dir}': {len(jsonl_file)} -----")
+
 
 if __name__ == "__main__":
     main()

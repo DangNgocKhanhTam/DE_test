@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: raw_data
+    database: cusma-383203
+    schema: raw_data
+    tables:
+      - name: users
+      - name: transaction
+      - name: rates
+
+
+models:
+  - name: stg_users
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+  
+  - name: stg_transactions
+    columns:
+      - name: txn_id
+        tests:
+          - unique
+          - not_null
+  
+  - name: stg_rates
+    columns:
+      - name: symbol
+        tests:
+          - not_null
+      - name: close_price
+        tests:
+          - not_null
+
