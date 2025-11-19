@@ -1,0 +1,69 @@
+[2025-11-19T12:21:15.607+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-19T12:21:15.650+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_finance.dbt_test_finance_all manual__2025-11-19T12:08:21.354688+00:00 [queued]>
+[2025-11-19T12:21:15.661+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_finance.dbt_test_finance_all manual__2025-11-19T12:08:21.354688+00:00 [queued]>
+[2025-11-19T12:21:15.662+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-11-19T12:21:15.677+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_test_finance_all> on 2025-11-19 12:08:21.354688+00:00
+[2025-11-19T12:21:15.684+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=384) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-19T12:21:15.685+0000] {standard_task_runner.py:64} INFO - Started process 385 to run task
+[2025-11-19T12:21:15.684+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_finance', 'dbt_test_finance_all', 'manual__2025-11-19T12:08:21.354688+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/dbt_finance.py', '--cfg-path', '/tmp/tmpfhngf_ow']
+[2025-11-19T12:21:15.686+0000] {standard_task_runner.py:91} INFO - Job 37: Subtask dbt_test_finance_all
+[2025-11-19T12:21:15.751+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_finance.dbt_test_finance_all manual__2025-11-19T12:08:21.354688+00:00 [running]> on host 51d2cd8bcdaf
+[2025-11-19T12:21:15.852+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='tam.dang' AIRFLOW_CTX_DAG_ID='dbt_finance' AIRFLOW_CTX_TASK_ID='dbt_test_finance_all' AIRFLOW_CTX_EXECUTION_DATE='2025-11-19T12:08:21.354688+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-19T12:08:21.354688+00:00'
+[2025-11-19T12:21:15.853+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-19T12:21:15.871+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-19T12:21:15.872+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/*** && dbt test --select finance --target prod']
+[2025-11-19T12:21:15.881+0000] {subprocess.py:86} INFO - Output:
+[2025-11-19T12:21:20.244+0000] {subprocess.py:93} INFO - [0m12:21:20  Running with dbt=1.7.19
+[2025-11-19T12:21:21.549+0000] {subprocess.py:93} INFO - [0m12:21:21  Registered adapter: bigquery=1.7.0
+[2025-11-19T12:21:21.665+0000] {subprocess.py:93} INFO - [0m12:21:21  Found 12 models, 18 tests, 3 sources, 0 exposures, 0 metrics, 561 macros, 0 groups, 0 semantic models
+[2025-11-19T12:21:21.670+0000] {subprocess.py:93} INFO - [0m12:21:21
+[2025-11-19T12:21:23.253+0000] {subprocess.py:93} INFO - [0m12:21:23  Concurrency: 1 threads (target='prod')
+[2025-11-19T12:21:23.256+0000] {subprocess.py:93} INFO - [0m12:21:23
+[2025-11-19T12:21:23.274+0000] {subprocess.py:93} INFO - [0m12:21:23  1 of 18 START test not_null_dim_currencies_currency ............................ [RUN]
+[2025-11-19T12:21:26.052+0000] {subprocess.py:93} INFO - [0m12:21:26  1 of 18 PASS not_null_dim_currencies_currency .................................. [[32mPASS[0m in 2.77s]
+[2025-11-19T12:21:26.060+0000] {subprocess.py:93} INFO - [0m12:21:26  2 of 18 START test not_null_dim_date_date ...................................... [RUN]
+[2025-11-19T12:21:27.685+0000] {subprocess.py:93} INFO - [0m12:21:27  2 of 18 PASS not_null_dim_date_date ............................................ [[32mPASS[0m in 1.62s]
+[2025-11-19T12:21:27.692+0000] {subprocess.py:93} INFO - [0m12:21:27  3 of 18 START test not_null_dim_users_effective_from ........................... [RUN]
+[2025-11-19T12:21:29.017+0000] {subprocess.py:93} INFO - [0m12:21:29  3 of 18 PASS not_null_dim_users_effective_from ................................. [[32mPASS[0m in 1.32s]
+[2025-11-19T12:21:29.021+0000] {subprocess.py:93} INFO - [0m12:21:29  4 of 18 START test not_null_dim_users_effective_to ............................. [RUN]
+[2025-11-19T12:21:30.200+0000] {subprocess.py:93} INFO - [0m12:21:30  4 of 18 PASS not_null_dim_users_effective_to ................................... [[32mPASS[0m in 1.18s]
+[2025-11-19T12:21:30.204+0000] {subprocess.py:93} INFO - [0m12:21:30  5 of 18 START test not_null_dim_users_kyc_level ................................ [RUN]
+[2025-11-19T12:21:31.376+0000] {subprocess.py:93} INFO - [0m12:21:31  5 of 18 PASS not_null_dim_users_kyc_level ...................................... [[32mPASS[0m in 1.17s]
+[2025-11-19T12:21:31.382+0000] {subprocess.py:93} INFO - [0m12:21:31  6 of 18 START test not_null_dim_users_user_id .................................. [RUN]
+[2025-11-19T12:21:32.738+0000] {subprocess.py:93} INFO - [0m12:21:32  6 of 18 PASS not_null_dim_users_user_id ........................................ [[32mPASS[0m in 1.35s]
+[2025-11-19T12:21:32.752+0000] {subprocess.py:93} INFO - [0m12:21:32  7 of 18 START test not_null_dim_users_user_kyc_key ............................. [RUN]
+[2025-11-19T12:21:34.470+0000] {subprocess.py:93} INFO - [0m12:21:34  7 of 18 PASS not_null_dim_users_user_kyc_key ................................... [[32mPASS[0m in 1.72s]
+[2025-11-19T12:21:34.477+0000] {subprocess.py:93} INFO - [0m12:21:34  8 of 18 START test not_null_fct_transactions_txn_id ............................ [RUN]
+[2025-11-19T12:21:35.866+0000] {subprocess.py:93} INFO - [0m12:21:35  8 of 18 PASS not_null_fct_transactions_txn_id .................................. [[32mPASS[0m in 1.39s]
+[2025-11-19T12:21:35.871+0000] {subprocess.py:93} INFO - [0m12:21:35  9 of 18 START test not_null_stg_rates_close_price .............................. [RUN]
+[2025-11-19T12:21:37.356+0000] {subprocess.py:93} INFO - [0m12:21:37  9 of 18 PASS not_null_stg_rates_close_price .................................... [[32mPASS[0m in 1.48s]
+[2025-11-19T12:21:37.364+0000] {subprocess.py:93} INFO - [0m12:21:37  10 of 18 START test not_null_stg_rates_symbol .................................. [RUN]
+[2025-11-19T12:21:38.896+0000] {subprocess.py:93} INFO - [0m12:21:38  10 of 18 PASS not_null_stg_rates_symbol ........................................ [[32mPASS[0m in 1.53s]
+[2025-11-19T12:21:38.902+0000] {subprocess.py:93} INFO - [0m12:21:38  11 of 18 START test not_null_stg_transactions_txn_id ........................... [RUN]
+[2025-11-19T12:21:40.396+0000] {subprocess.py:93} INFO - [0m12:21:40  11 of 18 PASS not_null_stg_transactions_txn_id ................................. [[32mPASS[0m in 1.49s]
+[2025-11-19T12:21:40.404+0000] {subprocess.py:93} INFO - [0m12:21:40  12 of 18 START test not_null_stg_users_user_id ................................. [RUN]
+[2025-11-19T12:21:41.908+0000] {subprocess.py:93} INFO - [0m12:21:41  12 of 18 PASS not_null_stg_users_user_id ....................................... [[32mPASS[0m in 1.50s]
+[2025-11-19T12:21:41.914+0000] {subprocess.py:93} INFO - [0m12:21:41  13 of 18 START test unique_dim_currencies_currency ............................. [RUN]
+[2025-11-19T12:21:43.151+0000] {subprocess.py:93} INFO - [0m12:21:43  13 of 18 PASS unique_dim_currencies_currency ................................... [[32mPASS[0m in 1.23s]
+[2025-11-19T12:21:43.158+0000] {subprocess.py:93} INFO - [0m12:21:43  14 of 18 START test unique_dim_date_date ....................................... [RUN]
+[2025-11-19T12:21:44.470+0000] {subprocess.py:93} INFO - [0m12:21:44  14 of 18 PASS unique_dim_date_date ............................................. [[32mPASS[0m in 1.31s]
+[2025-11-19T12:21:44.474+0000] {subprocess.py:93} INFO - [0m12:21:44  15 of 18 START test unique_dim_users_user_kyc_key .............................. [RUN]
+[2025-11-19T12:21:45.648+0000] {subprocess.py:93} INFO - [0m12:21:45  15 of 18 PASS unique_dim_users_user_kyc_key .................................... [[32mPASS[0m in 1.17s]
+[2025-11-19T12:21:45.655+0000] {subprocess.py:93} INFO - [0m12:21:45  16 of 18 START test unique_fct_transactions_txn_id ............................. [RUN]
+[2025-11-19T12:21:47.017+0000] {subprocess.py:93} INFO - [0m12:21:47  16 of 18 PASS unique_fct_transactions_txn_id ................................... [[32mPASS[0m in 1.36s]
+[2025-11-19T12:21:47.025+0000] {subprocess.py:93} INFO - [0m12:21:47  17 of 18 START test unique_stg_transactions_txn_id ............................. [RUN]
+[2025-11-19T12:21:48.481+0000] {subprocess.py:93} INFO - [0m12:21:48  17 of 18 PASS unique_stg_transactions_txn_id ................................... [[32mPASS[0m in 1.46s]
+[2025-11-19T12:21:48.489+0000] {subprocess.py:93} INFO - [0m12:21:48  18 of 18 START test unique_stg_users_user_id ................................... [RUN]
+[2025-11-19T12:21:50.017+0000] {subprocess.py:93} INFO - [0m12:21:50  18 of 18 PASS unique_stg_users_user_id ......................................... [[32mPASS[0m in 1.53s]
+[2025-11-19T12:21:50.029+0000] {subprocess.py:93} INFO - [0m12:21:50
+[2025-11-19T12:21:50.031+0000] {subprocess.py:93} INFO - [0m12:21:50  Finished running 18 tests in 0 hours 0 minutes and 28.36 seconds (28.36s).
+[2025-11-19T12:21:50.054+0000] {subprocess.py:93} INFO - [0m12:21:50
+[2025-11-19T12:21:50.056+0000] {subprocess.py:93} INFO - [0m12:21:50  [32mCompleted successfully[0m
+[2025-11-19T12:21:50.057+0000] {subprocess.py:93} INFO - [0m12:21:50
+[2025-11-19T12:21:50.058+0000] {subprocess.py:93} INFO - [0m12:21:50  Done. PASS=18 WARN=0 ERROR=0 SKIP=0 TOTAL=18
+[2025-11-19T12:21:51.795+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-19T12:21:51.797+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-19T12:21:51.837+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dbt_finance, task_id=dbt_test_finance_all, run_id=manual__2025-11-19T12:08:21.354688+00:00, execution_date=20251119T120821, start_date=20251119T122115, end_date=20251119T122151
+[2025-11-19T12:21:51.896+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-11-19T12:21:51.929+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-11-19T12:21:51.932+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

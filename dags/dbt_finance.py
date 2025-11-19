@@ -35,19 +35,11 @@ else:
 project_id = 'cusma-383203'
 dataset_id = 'dwh_prod'
 
-wait_for_ingestion = ExternalTaskSensor(
-    task_id='wait_for_data_ingestion',
-    external_dag_id='data_ingestion',
-    external_task_id='load_raw_data_to_bigquery',
-    timeout=3600,
-    poke_interval=300,
-    mode='reschedule',
-    dag=finance_dag,
-)
+
 
 dbt_deps = BashOperator(
     task_id='dbt_deps',
-    bash_command=f'cd {project_dir} && dbt deps',
+    bash_command=f'cd {project_dir} && dbt deps --target prod',
     dag=finance_dag,
 )
 
@@ -97,5 +89,5 @@ end = EmptyOperator(
 )
 
 
-wait_for_ingestion >> dbt_deps >> dbt_run_finance_staging >> dbt_test_finance_staging >> dbt_run_finance_intermediate >> dbt_run_finance_marts >> dbt_test_finance_all >> dbt_docs_generate
+init >> dbt_deps >> dbt_run_finance_staging >> dbt_test_finance_staging >> dbt_run_finance_intermediate >> dbt_run_finance_marts >> dbt_test_finance_all >> dbt_docs_generate >> end
 

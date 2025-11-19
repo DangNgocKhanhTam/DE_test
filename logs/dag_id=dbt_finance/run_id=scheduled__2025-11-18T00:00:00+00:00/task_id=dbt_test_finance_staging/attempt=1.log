@@ -1,0 +1,45 @@
+[2025-11-19T11:50:19.693+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-19T11:50:19.731+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_finance.dbt_test_finance_staging scheduled__2025-11-18T00:00:00+00:00 [queued]>
+[2025-11-19T11:50:19.743+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_finance.dbt_test_finance_staging scheduled__2025-11-18T00:00:00+00:00 [queued]>
+[2025-11-19T11:50:19.744+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-11-19T11:50:19.759+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_test_finance_staging> on 2025-11-18 00:00:00+00:00
+[2025-11-19T11:50:19.766+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=241) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-19T11:50:19.767+0000] {standard_task_runner.py:64} INFO - Started process 242 to run task
+[2025-11-19T11:50:19.766+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_finance', 'dbt_test_finance_staging', 'scheduled__2025-11-18T00:00:00+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/dbt_finance.py', '--cfg-path', '/tmp/tmp12i1tv6z']
+[2025-11-19T11:50:19.768+0000] {standard_task_runner.py:91} INFO - Job 14: Subtask dbt_test_finance_staging
+[2025-11-19T11:50:19.824+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_finance.dbt_test_finance_staging scheduled__2025-11-18T00:00:00+00:00 [running]> on host 5004021ba987
+[2025-11-19T11:50:19.922+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='tam.dang' AIRFLOW_CTX_DAG_ID='dbt_finance' AIRFLOW_CTX_TASK_ID='dbt_test_finance_staging' AIRFLOW_CTX_EXECUTION_DATE='2025-11-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-18T00:00:00+00:00'
+[2025-11-19T11:50:19.923+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-19T11:50:19.941+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-19T11:50:19.942+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/*** && dbt test --select finance.staging --target prod']
+[2025-11-19T11:50:19.950+0000] {subprocess.py:86} INFO - Output:
+[2025-11-19T11:50:22.898+0000] {subprocess.py:93} INFO - [0m11:50:22  Running with dbt=1.7.19
+[2025-11-19T11:50:23.939+0000] {subprocess.py:93} INFO - [0m11:50:23  Registered adapter: bigquery=1.7.0
+[2025-11-19T11:50:24.024+0000] {subprocess.py:93} INFO - [0m11:50:24  Found 12 models, 18 tests, 3 sources, 0 exposures, 0 metrics, 447 macros, 0 groups, 0 semantic models
+[2025-11-19T11:50:24.028+0000] {subprocess.py:93} INFO - [0m11:50:24
+[2025-11-19T11:50:26.445+0000] {subprocess.py:93} INFO - [0m11:50:26  Concurrency: 1 threads (target='prod')
+[2025-11-19T11:50:26.446+0000] {subprocess.py:93} INFO - [0m11:50:26
+[2025-11-19T11:50:26.462+0000] {subprocess.py:93} INFO - [0m11:50:26  1 of 6 START test not_null_stg_rates_close_price ............................... [RUN]
+[2025-11-19T11:50:28.372+0000] {subprocess.py:93} INFO - [0m11:50:28  1 of 6 PASS not_null_stg_rates_close_price ..................................... [[32mPASS[0m in 1.91s]
+[2025-11-19T11:50:28.379+0000] {subprocess.py:93} INFO - [0m11:50:28  2 of 6 START test not_null_stg_rates_symbol .................................... [RUN]
+[2025-11-19T11:50:30.195+0000] {subprocess.py:93} INFO - [0m11:50:30  2 of 6 PASS not_null_stg_rates_symbol .......................................... [[32mPASS[0m in 1.81s]
+[2025-11-19T11:50:30.204+0000] {subprocess.py:93} INFO - [0m11:50:30  3 of 6 START test not_null_stg_transactions_txn_id ............................. [RUN]
+[2025-11-19T11:50:32.036+0000] {subprocess.py:93} INFO - [0m11:50:32  3 of 6 PASS not_null_stg_transactions_txn_id ................................... [[32mPASS[0m in 1.83s]
+[2025-11-19T11:50:32.044+0000] {subprocess.py:93} INFO - [0m11:50:32  4 of 6 START test not_null_stg_users_user_id ................................... [RUN]
+[2025-11-19T11:50:33.691+0000] {subprocess.py:93} INFO - [0m11:50:33  4 of 6 PASS not_null_stg_users_user_id ......................................... [[32mPASS[0m in 1.64s]
+[2025-11-19T11:50:33.697+0000] {subprocess.py:93} INFO - [0m11:50:33  5 of 6 START test unique_stg_transactions_txn_id ............................... [RUN]
+[2025-11-19T11:50:35.439+0000] {subprocess.py:93} INFO - [0m11:50:35  5 of 6 PASS unique_stg_transactions_txn_id ..................................... [[32mPASS[0m in 1.74s]
+[2025-11-19T11:50:35.447+0000] {subprocess.py:93} INFO - [0m11:50:35  6 of 6 START test unique_stg_users_user_id ..................................... [RUN]
+[2025-11-19T11:50:37.032+0000] {subprocess.py:93} INFO - [0m11:50:37  6 of 6 PASS unique_stg_users_user_id ........................................... [[32mPASS[0m in 1.58s]
+[2025-11-19T11:50:37.047+0000] {subprocess.py:93} INFO - [0m11:50:37
+[2025-11-19T11:50:37.049+0000] {subprocess.py:93} INFO - [0m11:50:37  Finished running 6 tests in 0 hours 0 minutes and 13.02 seconds (13.02s).
+[2025-11-19T11:50:37.066+0000] {subprocess.py:93} INFO - [0m11:50:37
+[2025-11-19T11:50:37.067+0000] {subprocess.py:93} INFO - [0m11:50:37  [32mCompleted successfully[0m
+[2025-11-19T11:50:37.068+0000] {subprocess.py:93} INFO - [0m11:50:37
+[2025-11-19T11:50:37.069+0000] {subprocess.py:93} INFO - [0m11:50:37  Done. PASS=6 WARN=0 ERROR=0 SKIP=0 TOTAL=6
+[2025-11-19T11:50:38.735+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-19T11:50:38.737+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-19T11:50:38.768+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dbt_finance, task_id=dbt_test_finance_staging, run_id=scheduled__2025-11-18T00:00:00+00:00, execution_date=20251118T000000, start_date=20251119T115019, end_date=20251119T115038
+[2025-11-19T11:50:38.795+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-11-19T11:50:38.821+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-11-19T11:50:38.823+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

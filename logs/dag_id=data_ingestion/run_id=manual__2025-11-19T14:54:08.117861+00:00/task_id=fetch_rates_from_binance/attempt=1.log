@@ -1,0 +1,648 @@
+[2025-11-19T14:54:10.942+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-19T14:54:11.082+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion.fetch_rates_from_binance manual__2025-11-19T14:54:08.117861+00:00 [queued]>
+[2025-11-19T14:54:11.111+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion.fetch_rates_from_binance manual__2025-11-19T14:54:08.117861+00:00 [queued]>
+[2025-11-19T14:54:11.113+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2025-11-19T14:54:11.153+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): fetch_rates_from_binance> on 2025-11-19 14:54:08.117861+00:00
+[2025-11-19T14:54:11.166+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=1295) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-19T14:54:11.168+0000] {standard_task_runner.py:64} INFO - Started process 1296 to run task
+[2025-11-19T14:54:11.166+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion', 'fetch_rates_from_binance', 'manual__2025-11-19T14:54:08.117861+00:00', '--job-id', '39', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion.py', '--cfg-path', '/tmp/tmpvz2hjl4l']
+[2025-11-19T14:54:11.170+0000] {standard_task_runner.py:91} INFO - Job 39: Subtask fetch_rates_from_binance
+[2025-11-19T14:54:11.285+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion.fetch_rates_from_binance manual__2025-11-19T14:54:08.117861+00:00 [running]> on host 51d2cd8bcdaf
+[2025-11-19T14:54:11.461+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='tam.dang' AIRFLOW_CTX_DAG_ID='data_ingestion' AIRFLOW_CTX_TASK_ID='fetch_rates_from_binance' AIRFLOW_CTX_EXECUTION_DATE='2025-11-19T14:54:08.117861+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-19T14:54:08.117861+00:00'
+[2025-11-19T14:54:11.464+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-19T14:54:11.500+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-19T14:54:11.504+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/*** && PYTHONPATH=/opt/***:$PYTHONPATH python scripts/fetch_kline.py']
+[2025-11-19T14:54:11.522+0000] {subprocess.py:86} INFO - Output:
+[2025-11-19T14:54:26.215+0000] {subprocess.py:93} INFO - ------Read data/transactions.csv sucessfully------
+[2025-11-19T14:54:26.216+0000] {subprocess.py:93} INFO - ------Convert created_at to datetime--------
+[2025-11-19T14:54:26.217+0000] {subprocess.py:93} INFO - -----Found 27 destination currency
+[2025-11-19T14:54:26.217+0000] {subprocess.py:93} INFO - -----Number of transactions by destination currency---------
+[2025-11-19T14:54:26.218+0000] {subprocess.py:93} INFO - destination_currency
+[2025-11-19T14:54:26.219+0000] {subprocess.py:93} INFO - USDT    489
+[2025-11-19T14:54:26.219+0000] {subprocess.py:93} INFO - BTC     217
+[2025-11-19T14:54:26.220+0000] {subprocess.py:93} INFO - SHIB     45
+[2025-11-19T14:54:26.221+0000] {subprocess.py:93} INFO - ETH      41
+[2025-11-19T14:54:26.221+0000] {subprocess.py:93} INFO - ADA      30
+[2025-11-19T14:54:26.222+0000] {subprocess.py:93} INFO - LTC      27
+[2025-11-19T14:54:26.222+0000] {subprocess.py:93} INFO - SOL      27
+[2025-11-19T14:54:26.222+0000] {subprocess.py:93} INFO - BNB      20
+[2025-11-19T14:54:26.222+0000] {subprocess.py:93} INFO - DOGE     18
+[2025-11-19T14:54:26.223+0000] {subprocess.py:93} INFO - XRP      18
+[2025-11-19T14:54:26.223+0000] {subprocess.py:93} INFO - TRX      14
+[2025-11-19T14:54:26.223+0000] {subprocess.py:93} INFO - XLM      10
+[2025-11-19T14:54:26.224+0000] {subprocess.py:93} INFO - S         6
+[2025-11-19T14:54:26.224+0000] {subprocess.py:93} INFO - KAI       5
+[2025-11-19T14:54:26.224+0000] {subprocess.py:93} INFO - USDC      4
+[2025-11-19T14:54:26.224+0000] {subprocess.py:93} INFO - AVAX      3
+[2025-11-19T14:54:26.225+0000] {subprocess.py:93} INFO - AXS       3
+[2025-11-19T14:54:26.225+0000] {subprocess.py:93} INFO - ETC       3
+[2025-11-19T14:54:26.226+0000] {subprocess.py:93} INFO - BCH       3
+[2025-11-19T14:54:26.226+0000] {subprocess.py:93} INFO - UNI       3
+[2025-11-19T14:54:26.227+0000] {subprocess.py:93} INFO - XTZ       3
+[2025-11-19T14:54:26.227+0000] {subprocess.py:93} INFO - NEAR      3
+[2025-11-19T14:54:26.228+0000] {subprocess.py:93} INFO - POL       3
+[2025-11-19T14:54:26.228+0000] {subprocess.py:93} INFO - ONUS      2
+[2025-11-19T14:54:26.229+0000] {subprocess.py:93} INFO - DOT       1
+[2025-11-19T14:54:26.229+0000] {subprocess.py:93} INFO - FIVE      1
+[2025-11-19T14:54:26.229+0000] {subprocess.py:93} INFO - LINK      1
+[2025-11-19T14:54:26.230+0000] {subprocess.py:93} INFO - Name: txn_id, dtype: int64
+[2025-11-19T14:54:26.230+0000] {subprocess.py:93} INFO - -------start_date : 2025-05-10 04:39:19.197000+00:00---------
+[2025-11-19T14:54:26.231+0000] {subprocess.py:93} INFO - -------end_date : 2025-11-12 23:41:37.562000+00:00---------
+[2025-11-19T14:54:26.232+0000] {subprocess.py:93} INFO - ----timerange: 186 days, 19 hour---------
+[2025-11-19T14:54:26.233+0000] {subprocess.py:93} INFO - -------Currency pair available in USDT: ['ADAUSDT', 'BNBUSDT', 'BTCUSDT', 'ETHUSDT', 'IOTAUSDT', 'LTCUSDT', 'NEOUSDT', 'QTUMUSDT', 'TUSDUSDT', 'XRPUSDT']------------
+[2025-11-19T14:54:26.233+0000] {subprocess.py:93} INFO - ---Number of USDT pair in Binance: 439
+[2025-11-19T14:54:26.234+0000] {subprocess.py:93} INFO - ------ADAUSDT - is available in Binance-----
+[2025-11-19T14:54:26.234+0000] {subprocess.py:93} INFO - ------BNBUSDT - is available in Binance-----
+[2025-11-19T14:54:26.235+0000] {subprocess.py:93} INFO - ------BTCUSDT - is available in Binance-----
+[2025-11-19T14:54:26.235+0000] {subprocess.py:93} INFO - ------DOGEUSDT - is available in Binance-----
+[2025-11-19T14:54:26.236+0000] {subprocess.py:93} INFO - ------ETHUSDT - is available in Binance-----
+[2025-11-19T14:54:26.237+0000] {subprocess.py:93} INFO - ------KAI - is unavailable in Binance------
+[2025-11-19T14:54:26.237+0000] {subprocess.py:93} INFO - ------LTCUSDT - is available in Binance-----
+[2025-11-19T14:54:26.237+0000] {subprocess.py:93} INFO - ------POLUSDT - is available in Binance-----
+[2025-11-19T14:54:26.238+0000] {subprocess.py:93} INFO - ------SUSDT - is available in Binance-----
+[2025-11-19T14:54:26.238+0000] {subprocess.py:93} INFO - ------SHIBUSDT - is available in Binance-----
+[2025-11-19T14:54:26.239+0000] {subprocess.py:93} INFO - ------SOLUSDT - is available in Binance-----
+[2025-11-19T14:54:26.239+0000] {subprocess.py:93} INFO - ------TRXUSDT - is available in Binance-----
+[2025-11-19T14:54:26.239+0000] {subprocess.py:93} INFO - ------XLMUSDT - is available in Binance-----
+[2025-11-19T14:54:26.239+0000] {subprocess.py:93} INFO - ------XRPUSDT - is available in Binance-----
+[2025-11-19T14:54:26.240+0000] {subprocess.py:93} INFO - ------AXSUSDT - is available in Binance-----
+[2025-11-19T14:54:26.240+0000] {subprocess.py:93} INFO - ------ONUS - is unavailable in Binance------
+[2025-11-19T14:54:26.240+0000] {subprocess.py:93} INFO - ------UNIUSDT - is available in Binance-----
+[2025-11-19T14:54:26.241+0000] {subprocess.py:93} INFO - ------USDCUSDT - is available in Binance-----
+[2025-11-19T14:54:26.241+0000] {subprocess.py:93} INFO - ------XTZUSDT - is available in Binance-----
+[2025-11-19T14:54:26.241+0000] {subprocess.py:93} INFO - ------AVAXUSDT - is available in Binance-----
+[2025-11-19T14:54:26.241+0000] {subprocess.py:93} INFO - ------BCHUSDT - is available in Binance-----
+[2025-11-19T14:54:26.242+0000] {subprocess.py:93} INFO - ------NEARUSDT - is available in Binance-----
+[2025-11-19T14:54:26.242+0000] {subprocess.py:93} INFO - ------ETCUSDT - is available in Binance-----
+[2025-11-19T14:54:26.242+0000] {subprocess.py:93} INFO - ------FIVE - is unavailable in Binance------
+[2025-11-19T14:54:26.243+0000] {subprocess.py:93} INFO - ------LINKUSDT - is available in Binance-----
+[2025-11-19T14:54:26.243+0000] {subprocess.py:93} INFO - ------DOTUSDT - is available in Binance-----
+[2025-11-19T14:54:26.243+0000] {subprocess.py:93} INFO - -----Having unavailable 3 pairs/27 destination currencies : ['KAI', 'ONUS', 'FIVE']
+[2025-11-19T14:54:26.244+0000] {subprocess.py:93} INFO - -----Having available 23 pairs/27 destination currencies
+[2025-11-19T14:54:26.244+0000] {subprocess.py:93} INFO - -------Currency pair available in USDT: ['ADAUSDT', 'BNBUSDT', 'BTCUSDT', 'ETHUSDT', 'IOTAUSDT', 'LTCUSDT', 'NEOUSDT', 'QTUMUSDT', 'TUSDUSDT', 'XRPUSDT']------------
+[2025-11-19T14:54:26.244+0000] {subprocess.py:93} INFO - ---Number of USDT pair in Binance: 439
+[2025-11-19T14:54:26.245+0000] {subprocess.py:93} INFO - ------ADAUSDT - is available in Binance-----
+[2025-11-19T14:54:26.245+0000] {subprocess.py:93} INFO - ------BNBUSDT - is available in Binance-----
+[2025-11-19T14:54:26.245+0000] {subprocess.py:93} INFO - ------BTCUSDT - is available in Binance-----
+[2025-11-19T14:54:26.245+0000] {subprocess.py:93} INFO - ------DOGEUSDT - is available in Binance-----
+[2025-11-19T14:54:26.246+0000] {subprocess.py:93} INFO - ------ETHUSDT - is available in Binance-----
+[2025-11-19T14:54:26.246+0000] {subprocess.py:93} INFO - ------KAI - is unavailable in Binance------
+[2025-11-19T14:54:26.246+0000] {subprocess.py:93} INFO - ------LTCUSDT - is available in Binance-----
+[2025-11-19T14:54:26.246+0000] {subprocess.py:93} INFO - ------POLUSDT - is available in Binance-----
+[2025-11-19T14:54:26.247+0000] {subprocess.py:93} INFO - ------SUSDT - is available in Binance-----
+[2025-11-19T14:54:26.247+0000] {subprocess.py:93} INFO - ------SHIBUSDT - is available in Binance-----
+[2025-11-19T14:54:26.247+0000] {subprocess.py:93} INFO - ------SOLUSDT - is available in Binance-----
+[2025-11-19T14:54:26.248+0000] {subprocess.py:93} INFO - ------TRXUSDT - is available in Binance-----
+[2025-11-19T14:54:26.249+0000] {subprocess.py:93} INFO - ------XLMUSDT - is available in Binance-----
+[2025-11-19T14:54:26.250+0000] {subprocess.py:93} INFO - ------XRPUSDT - is available in Binance-----
+[2025-11-19T14:54:26.251+0000] {subprocess.py:93} INFO - ------AXSUSDT - is available in Binance-----
+[2025-11-19T14:54:26.252+0000] {subprocess.py:93} INFO - ------ONUS - is unavailable in Binance------
+[2025-11-19T14:54:26.252+0000] {subprocess.py:93} INFO - ------UNIUSDT - is available in Binance-----
+[2025-11-19T14:54:26.253+0000] {subprocess.py:93} INFO - ------USDCUSDT - is available in Binance-----
+[2025-11-19T14:54:26.254+0000] {subprocess.py:93} INFO - ------XTZUSDT - is available in Binance-----
+[2025-11-19T14:54:26.254+0000] {subprocess.py:93} INFO - ------AVAXUSDT - is available in Binance-----
+[2025-11-19T14:54:26.254+0000] {subprocess.py:93} INFO - ------BCHUSDT - is available in Binance-----
+[2025-11-19T14:54:26.255+0000] {subprocess.py:93} INFO - ------NEARUSDT - is available in Binance-----
+[2025-11-19T14:54:26.255+0000] {subprocess.py:93} INFO - ------ETCUSDT - is available in Binance-----
+[2025-11-19T14:54:26.255+0000] {subprocess.py:93} INFO - ------FIVE - is unavailable in Binance------
+[2025-11-19T14:54:26.255+0000] {subprocess.py:93} INFO - ------LINKUSDT - is available in Binance-----
+[2025-11-19T14:54:26.256+0000] {subprocess.py:93} INFO - ------DOTUSDT - is available in Binance-----
+[2025-11-19T14:54:26.256+0000] {subprocess.py:93} INFO - -----Having unavailable 3 pairs/27 destination currencies : ['KAI', 'ONUS', 'FIVE']
+[2025-11-19T14:54:26.257+0000] {subprocess.py:93} INFO - -----Having available 23 pairs/27 destination currencies
+[2025-11-19T14:54:26.257+0000] {subprocess.py:93} INFO - pair ADAUSDT
+[2025-11-19T14:54:26.257+0000] {subprocess.py:93} INFO - ---------1/23 is processing... ----------
+[2025-11-19T14:54:26.257+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.258+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.258+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.258+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:26.259+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.259+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.259+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.260+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:26.260+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.260+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.261+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.261+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:26.261+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.261+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.262+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.262+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:26.262+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.262+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:26.263+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:26.263+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:26.263+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/ADAUSDT.jsonl
+[2025-11-19T14:54:26.264+0000] {subprocess.py:93} INFO - pair BNBUSDT
+[2025-11-19T14:54:26.264+0000] {subprocess.py:93} INFO - ---------2/23 is processing... ----------
+[2025-11-19T14:54:26.264+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.265+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.266+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.267+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:26.268+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.268+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.269+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.269+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:26.269+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.270+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.270+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.270+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:26.271+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.271+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.271+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.271+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:26.272+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.272+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:26.272+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:26.273+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:26.273+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/BNBUSDT.jsonl
+[2025-11-19T14:54:26.273+0000] {subprocess.py:93} INFO - pair BTCUSDT
+[2025-11-19T14:54:26.273+0000] {subprocess.py:93} INFO - ---------3/23 is processing... ----------
+[2025-11-19T14:54:26.274+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.274+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.274+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.274+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:26.275+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.275+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.275+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.276+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:26.276+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.277+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.277+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.278+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:26.278+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.278+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.279+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.279+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:26.279+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.280+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:26.280+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:26.280+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:26.280+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/BTCUSDT.jsonl
+[2025-11-19T14:54:26.281+0000] {subprocess.py:93} INFO - pair DOGEUSDT
+[2025-11-19T14:54:26.281+0000] {subprocess.py:93} INFO - ---------4/23 is processing... ----------
+[2025-11-19T14:54:26.282+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.283+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.283+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.284+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:26.285+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.285+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.286+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.286+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:26.286+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.287+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.287+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.287+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:26.287+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.288+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.288+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.288+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:26.289+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.289+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:26.289+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:26.290+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:26.290+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/DOGEUSDT.jsonl
+[2025-11-19T14:54:26.290+0000] {subprocess.py:93} INFO - pair ETHUSDT
+[2025-11-19T14:54:26.291+0000] {subprocess.py:93} INFO - ---------5/23 is processing... ----------
+[2025-11-19T14:54:26.291+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.291+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.291+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.292+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:26.292+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.292+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.293+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.293+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:26.293+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.294+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.294+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.294+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:26.294+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.295+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.295+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.295+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:26.296+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.296+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:26.296+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:26.296+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:26.297+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/ETHUSDT.jsonl
+[2025-11-19T14:54:26.297+0000] {subprocess.py:93} INFO - pair LTCUSDT
+[2025-11-19T14:54:26.297+0000] {subprocess.py:93} INFO - ---------6/23 is processing... ----------
+[2025-11-19T14:54:26.298+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.299+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.300+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.300+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:26.301+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.302+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.302+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.302+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:26.303+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.303+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.303+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.303+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:26.304+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.304+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.304+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.304+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:26.305+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.305+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:26.305+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:26.305+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:26.306+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/LTCUSDT.jsonl
+[2025-11-19T14:54:26.306+0000] {subprocess.py:93} INFO - pair POLUSDT
+[2025-11-19T14:54:26.307+0000] {subprocess.py:93} INFO - ---------7/23 is processing... ----------
+[2025-11-19T14:54:26.307+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.307+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.307+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.308+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:26.308+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.308+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.308+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.309+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:26.309+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.309+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.310+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.310+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:26.310+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.311+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.311+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.311+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:26.312+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.312+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:26.312+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:26.312+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:26.313+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/POLUSDT.jsonl
+[2025-11-19T14:54:26.313+0000] {subprocess.py:93} INFO - pair SUSDT
+[2025-11-19T14:54:26.314+0000] {subprocess.py:93} INFO - ---------8/23 is processing... ----------
+[2025-11-19T14:54:26.314+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.314+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.315+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.316+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:26.317+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.317+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.318+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.318+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:26.319+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.319+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.319+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.320+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:26.320+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.320+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:26.320+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:26.321+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:26.321+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:26.322+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:26.322+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:26.322+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:26.322+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/SUSDT.jsonl
+[2025-11-19T14:54:26.323+0000] {subprocess.py:93} INFO - pair SHIBUSDT
+[2025-11-19T14:54:47.525+0000] {subprocess.py:93} INFO - ---------9/23 is processing... ----------
+[2025-11-19T14:54:47.526+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.527+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.528+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.528+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:47.529+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.529+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.529+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.530+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:47.530+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.530+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.530+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.531+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:47.531+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.531+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.532+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.532+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:47.532+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.533+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:47.533+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:47.533+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:47.534+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/SHIBUSDT.jsonl
+[2025-11-19T14:54:47.534+0000] {subprocess.py:93} INFO - pair SOLUSDT
+[2025-11-19T14:54:47.535+0000] {subprocess.py:93} INFO - ---------10/23 is processing... ----------
+[2025-11-19T14:54:47.535+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.536+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.537+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.538+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:47.538+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.539+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.539+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.539+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:47.540+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.540+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.540+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.541+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:47.541+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.541+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.542+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.542+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:47.542+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.543+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:47.544+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:47.544+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:47.545+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/SOLUSDT.jsonl
+[2025-11-19T14:54:47.545+0000] {subprocess.py:93} INFO - pair TRXUSDT
+[2025-11-19T14:54:47.546+0000] {subprocess.py:93} INFO - ---------11/23 is processing... ----------
+[2025-11-19T14:54:47.546+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.546+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.547+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.547+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:47.547+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.547+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.548+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.548+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:47.548+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.549+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.549+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.549+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:47.550+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.550+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.550+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.551+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:47.551+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.552+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:47.552+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:47.552+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:47.553+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/TRXUSDT.jsonl
+[2025-11-19T14:54:47.553+0000] {subprocess.py:93} INFO - pair XLMUSDT
+[2025-11-19T14:54:47.553+0000] {subprocess.py:93} INFO - ---------12/23 is processing... ----------
+[2025-11-19T14:54:47.554+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.554+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.554+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.555+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:47.555+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.555+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.556+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.556+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:47.556+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.556+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.557+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.557+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:47.557+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.558+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.558+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.558+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:47.559+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.559+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:47.560+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:47.560+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:47.561+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/XLMUSDT.jsonl
+[2025-11-19T14:54:47.561+0000] {subprocess.py:93} INFO - pair XRPUSDT
+[2025-11-19T14:54:47.561+0000] {subprocess.py:93} INFO - ---------13/23 is processing... ----------
+[2025-11-19T14:54:47.562+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.562+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.562+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.562+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:47.563+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.563+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.564+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.564+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:47.564+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.565+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.565+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.565+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:47.566+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.566+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.566+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.567+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:47.567+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.568+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:47.568+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:47.568+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:47.569+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/XRPUSDT.jsonl
+[2025-11-19T14:54:47.569+0000] {subprocess.py:93} INFO - pair AXSUSDT
+[2025-11-19T14:54:47.569+0000] {subprocess.py:93} INFO - ---------14/23 is processing... ----------
+[2025-11-19T14:54:47.569+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.570+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.570+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.570+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:47.570+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.571+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.571+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.571+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:47.572+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.572+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.573+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.573+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:47.573+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.574+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.574+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.574+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:47.575+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.575+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:47.575+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:47.576+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:47.576+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/AXSUSDT.jsonl
+[2025-11-19T14:54:47.576+0000] {subprocess.py:93} INFO - pair UNIUSDT
+[2025-11-19T14:54:47.577+0000] {subprocess.py:93} INFO - ---------15/23 is processing... ----------
+[2025-11-19T14:54:47.577+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.577+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.578+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.578+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:47.578+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.579+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.579+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.579+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:47.579+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.580+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.580+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.580+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:47.581+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.581+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.581+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.581+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:47.582+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.582+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:47.582+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:47.582+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:47.583+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/UNIUSDT.jsonl
+[2025-11-19T14:54:47.583+0000] {subprocess.py:93} INFO - pair USDCUSDT
+[2025-11-19T14:54:47.584+0000] {subprocess.py:93} INFO - ---------16/23 is processing... ----------
+[2025-11-19T14:54:47.584+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.585+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.585+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.586+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:47.586+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.586+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.587+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.587+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:47.587+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.588+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.588+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.588+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:47.589+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.589+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.589+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.590+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:47.590+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.591+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:47.591+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:47.592+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:47.592+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/USDCUSDT.jsonl
+[2025-11-19T14:54:47.593+0000] {subprocess.py:93} INFO - pair XTZUSDT
+[2025-11-19T14:54:47.593+0000] {subprocess.py:93} INFO - ---------17/23 is processing... ----------
+[2025-11-19T14:54:47.593+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.594+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.594+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.595+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:47.595+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.595+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.596+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.596+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:47.596+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.597+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.597+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.597+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:47.597+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.598+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.598+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.598+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:47.599+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.599+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:47.600+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:47.600+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:47.600+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/XTZUSDT.jsonl
+[2025-11-19T14:54:47.601+0000] {subprocess.py:93} INFO - pair AVAXUSDT
+[2025-11-19T14:54:47.601+0000] {subprocess.py:93} INFO - ---------18/23 is processing... ----------
+[2025-11-19T14:54:47.602+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.602+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.602+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.603+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:47.603+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.603+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.604+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.604+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:47.604+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.605+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.605+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.605+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:47.605+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.606+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.606+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.607+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:47.607+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.607+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:47.608+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:47.608+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:47.609+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/AVAXUSDT.jsonl
+[2025-11-19T14:54:47.609+0000] {subprocess.py:93} INFO - pair BCHUSDT
+[2025-11-19T14:54:47.609+0000] {subprocess.py:93} INFO - ---------19/23 is processing... ----------
+[2025-11-19T14:54:47.610+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.610+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.610+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.611+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:47.611+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.611+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.611+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.612+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:47.612+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.612+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.613+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.613+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:47.613+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.613+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.614+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.614+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:47.615+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.615+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:47.615+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:47.615+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:47.616+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/BCHUSDT.jsonl
+[2025-11-19T14:54:47.616+0000] {subprocess.py:93} INFO - pair NEARUSDT
+[2025-11-19T14:54:47.616+0000] {subprocess.py:93} INFO - ---------20/23 is processing... ----------
+[2025-11-19T14:54:47.617+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.617+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.617+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.618+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:47.618+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.618+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.619+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.619+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:47.619+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.619+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.620+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.620+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:47.620+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.620+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.621+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.621+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:47.621+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.622+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:47.622+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:47.622+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:47.623+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/NEARUSDT.jsonl
+[2025-11-19T14:54:47.623+0000] {subprocess.py:93} INFO - pair ETCUSDT
+[2025-11-19T14:54:47.623+0000] {subprocess.py:93} INFO - ---------21/23 is processing... ----------
+[2025-11-19T14:54:47.624+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.624+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.624+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.625+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:47.625+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.625+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.626+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.626+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:47.626+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.627+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.627+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.627+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:47.628+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.628+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.628+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.629+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:47.629+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.629+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:47.629+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:47.630+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:47.630+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/ETCUSDT.jsonl
+[2025-11-19T14:54:47.630+0000] {subprocess.py:93} INFO - pair LINKUSDT
+[2025-11-19T14:54:47.631+0000] {subprocess.py:93} INFO - ---------22/23 is processing... ----------
+[2025-11-19T14:54:47.631+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.632+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.632+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.632+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:47.633+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.633+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.633+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.633+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:47.634+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.634+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.634+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.635+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:47.635+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.635+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.636+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.636+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:47.636+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.637+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:47.637+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:47.637+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:47.637+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/LINKUSDT.jsonl
+[2025-11-19T14:54:47.638+0000] {subprocess.py:93} INFO - pair DOTUSDT
+[2025-11-19T14:54:47.638+0000] {subprocess.py:93} INFO - ---------23/23 is processing... ----------
+[2025-11-19T14:54:47.638+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.638+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.639+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.639+0000] {subprocess.py:93} INFO - next_start = 1750453200000
+[2025-11-19T14:54:47.639+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.640+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.640+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.640+0000] {subprocess.py:93} INFO - next_start = 1754053200000
+[2025-11-19T14:54:47.641+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.641+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.642+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.642+0000] {subprocess.py:93} INFO - next_start = 1757653200000
+[2025-11-19T14:54:47.642+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.642+0000] {subprocess.py:93} INFO -  ------len data_klines: 1000----------
+[2025-11-19T14:54:47.643+0000] {subprocess.py:93} INFO - Fetched 1000 klines
+[2025-11-19T14:54:47.643+0000] {subprocess.py:93} INFO - next_start = 1761253200000
+[2025-11-19T14:54:47.643+0000] {subprocess.py:93} INFO - 
+[2025-11-19T14:54:47.644+0000] {subprocess.py:93} INFO -  ------len data_klines: 483----------
+[2025-11-19T14:54:47.644+0000] {subprocess.py:93} INFO - Fetched 483 klines
+[2025-11-19T14:54:47.644+0000] {subprocess.py:93} INFO - Last page reached → stop
+[2025-11-19T14:54:47.644+0000] {subprocess.py:93} INFO - -----Saved 4483 klines in : output/raw_rates/DOTUSDT.jsonl
+[2025-11-19T14:54:47.645+0000] {subprocess.py:93} INFO - --------Sucessfully fetch data in folder: output/raw_rates/
+[2025-11-19T14:54:47.645+0000] {subprocess.py:93} INFO - -----Total JSONL files in 'output/raw_rates': 23 -----
+[2025-11-19T14:54:47.645+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-19T14:54:47.647+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-19T14:54:47.684+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_ingestion, task_id=fetch_rates_from_binance, run_id=manual__2025-11-19T14:54:08.117861+00:00, execution_date=20251119T145408, start_date=20251119T145411, end_date=20251119T145447
+[2025-11-19T14:54:47.713+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-11-19T14:54:47.758+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-11-19T14:54:47.765+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

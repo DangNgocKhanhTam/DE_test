@@ -1,0 +1,71 @@
+[2025-11-19T11:56:46.766+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-19T11:56:46.815+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_finance.dbt_deps scheduled__2025-11-18T00:00:00+00:00 [queued]>
+[2025-11-19T11:56:46.831+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_finance.dbt_deps scheduled__2025-11-18T00:00:00+00:00 [queued]>
+[2025-11-19T11:56:46.832+0000] {taskinstance.py:2306} INFO - Starting attempt 4 of 5
+[2025-11-19T11:56:46.851+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_deps> on 2025-11-18 00:00:00+00:00
+[2025-11-19T11:56:46.859+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=288) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-19T11:56:46.860+0000] {standard_task_runner.py:64} INFO - Started process 289 to run task
+[2025-11-19T11:56:46.859+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_finance', 'dbt_deps', 'scheduled__2025-11-18T00:00:00+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/dbt_finance.py', '--cfg-path', '/tmp/tmpca9zgais']
+[2025-11-19T11:56:46.861+0000] {standard_task_runner.py:91} INFO - Job 20: Subtask dbt_deps
+[2025-11-19T11:56:46.928+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_finance.dbt_deps scheduled__2025-11-18T00:00:00+00:00 [running]> on host f8ef3c16e368
+[2025-11-19T11:56:47.026+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='tam.dang' AIRFLOW_CTX_DAG_ID='dbt_finance' AIRFLOW_CTX_TASK_ID='dbt_deps' AIRFLOW_CTX_EXECUTION_DATE='2025-11-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-18T00:00:00+00:00'
+[2025-11-19T11:56:47.027+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-19T11:56:47.047+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-19T11:56:47.048+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/*** && dbt deps']
+[2025-11-19T11:56:47.056+0000] {subprocess.py:86} INFO - Output:
+[2025-11-19T11:56:52.027+0000] {subprocess.py:93} INFO - [0m11:56:52  Running with dbt=1.7.19
+[2025-11-19T11:56:52.251+0000] {subprocess.py:93} INFO - [0m11:56:52  Encountered an error:
+[2025-11-19T11:56:52.252+0000] {subprocess.py:93} INFO - [Errno 16] Device or resource busy: 'dbt_packages'
+[2025-11-19T11:56:52.255+0000] {subprocess.py:93} INFO - [0m11:56:52  Traceback (most recent call last):
+[2025-11-19T11:56:52.256+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 91, in wrapper
+[2025-11-19T11:56:52.257+0000] {subprocess.py:93} INFO -     result, success = func(*args, **kwargs)
+[2025-11-19T11:56:52.258+0000] {subprocess.py:93} INFO -                       ^^^^^^^^^^^^^^^^^^^^^
+[2025-11-19T11:56:52.258+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 76, in wrapper
+[2025-11-19T11:56:52.259+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-11-19T11:56:52.260+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-11-19T11:56:52.260+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 152, in wrapper
+[2025-11-19T11:56:52.260+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-11-19T11:56:52.261+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-11-19T11:56:52.261+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 198, in wrapper
+[2025-11-19T11:56:52.262+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-11-19T11:56:52.262+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-11-19T11:56:52.262+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/main.py", line 493, in deps
+[2025-11-19T11:56:52.263+0000] {subprocess.py:93} INFO -     results = task.run()
+[2025-11-19T11:56:52.263+0000] {subprocess.py:93} INFO -               ^^^^^^^^^^
+[2025-11-19T11:56:52.263+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/task/deps.py", line 228, in run
+[2025-11-19T11:56:52.264+0000] {subprocess.py:93} INFO -     system.rmtree(self.project.packages_install_path)
+[2025-11-19T11:56:52.264+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/clients/system.py", line 570, in rmtree
+[2025-11-19T11:56:52.264+0000] {subprocess.py:93} INFO -     return shutil.rmtree(path, onerror=chmod_and_retry)
+[2025-11-19T11:56:52.265+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-19T11:56:52.265+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.12/shutil.py", line 759, in rmtree
+[2025-11-19T11:56:52.265+0000] {subprocess.py:93} INFO -     _rmtree_safe_fd(stack, onexc)
+[2025-11-19T11:56:52.266+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.12/shutil.py", line 703, in _rmtree_safe_fd
+[2025-11-19T11:56:52.267+0000] {subprocess.py:93} INFO -     onexc(func, path, err)
+[2025-11-19T11:56:52.267+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.12/shutil.py", line 750, in onexc
+[2025-11-19T11:56:52.268+0000] {subprocess.py:93} INFO -     return onerror(func, path, exc_info)
+[2025-11-19T11:56:52.268+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-19T11:56:52.268+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.12/shutil.py", line 662, in _rmtree_safe_fd
+[2025-11-19T11:56:52.269+0000] {subprocess.py:93} INFO -     os.rmdir(name, dir_fd=dirfd)
+[2025-11-19T11:56:52.269+0000] {subprocess.py:93} INFO - OSError: [Errno 16] Device or resource busy: 'dbt_packages'
+[2025-11-19T11:56:52.270+0000] {subprocess.py:93} INFO - 
+[2025-11-19T11:56:53.599+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-11-19T11:56:53.600+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-19T11:56:53.613+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-11-19T11:56:53.620+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=dbt_finance, task_id=dbt_deps, run_id=scheduled__2025-11-18T00:00:00+00:00, execution_date=20251118T000000, start_date=20251119T115646, end_date=20251119T115653
+[2025-11-19T11:56:53.636+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 20 for task dbt_deps (Bash command failed. The command returned a non-zero exit code 2.; 289)
+[2025-11-19T11:56:53.683+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-11-19T11:56:53.728+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-19T11:56:53.731+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

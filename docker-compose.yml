@@ -21,6 +21,7 @@ x-airflow-common:
     - ./binance:/opt/airflow/binance
     - ./dbt_project.yml:/opt/airflow/dbt_project.yml
     - ./profiles.yml:/opt/airflow/profiles.yml
+    - ./packages.yml:/opt/airflow/packages.yml
     - ./output:/opt/airflow/output
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:

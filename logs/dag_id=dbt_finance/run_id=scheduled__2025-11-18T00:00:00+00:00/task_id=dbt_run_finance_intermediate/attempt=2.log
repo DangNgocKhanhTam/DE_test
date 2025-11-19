@@ -1,0 +1,56 @@
+[2025-11-19T11:56:06.391+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-19T11:56:06.455+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_finance.dbt_run_finance_intermediate scheduled__2025-11-18T00:00:00+00:00 [queued]>
+[2025-11-19T11:56:06.471+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_finance.dbt_run_finance_intermediate scheduled__2025-11-18T00:00:00+00:00 [queued]>
+[2025-11-19T11:56:06.472+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2025-11-19T11:56:06.492+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_run_finance_intermediate> on 2025-11-18 00:00:00+00:00
+[2025-11-19T11:56:06.499+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_finance', 'dbt_run_finance_intermediate', 'scheduled__2025-11-18T00:00:00+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/dbt_finance.py', '--cfg-path', '/tmp/tmpfr5_m6a7']
+[2025-11-19T11:56:06.502+0000] {standard_task_runner.py:91} INFO - Job 17: Subtask dbt_run_finance_intermediate
+[2025-11-19T11:56:06.499+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=241) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-19T11:56:06.504+0000] {standard_task_runner.py:64} INFO - Started process 242 to run task
+[2025-11-19T11:56:06.583+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_finance.dbt_run_finance_intermediate scheduled__2025-11-18T00:00:00+00:00 [running]> on host f8ef3c16e368
+[2025-11-19T11:56:06.755+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='tam.dang' AIRFLOW_CTX_DAG_ID='dbt_finance' AIRFLOW_CTX_TASK_ID='dbt_run_finance_intermediate' AIRFLOW_CTX_EXECUTION_DATE='2025-11-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-18T00:00:00+00:00'
+[2025-11-19T11:56:06.757+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-19T11:56:06.845+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-19T11:56:06.846+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/*** && dbt run --select finance.intermediate --target prod']
+[2025-11-19T11:56:06.857+0000] {subprocess.py:86} INFO - Output:
+[2025-11-19T11:56:12.634+0000] {subprocess.py:93} INFO - [0m11:56:12  Running with dbt=1.7.19
+[2025-11-19T11:56:17.910+0000] {subprocess.py:93} INFO - [0m11:56:17  Registered adapter: bigquery=1.7.0
+[2025-11-19T11:56:17.950+0000] {subprocess.py:93} INFO - [0m11:56:17  Unable to do partial parsing because saved manifest not found. Starting full parse.
+[2025-11-19T11:56:21.427+0000] {subprocess.py:93} INFO - [0m11:56:21  Found 12 models, 18 tests, 3 sources, 0 exposures, 0 metrics, 561 macros, 0 groups, 0 semantic models
+[2025-11-19T11:56:21.433+0000] {subprocess.py:93} INFO - [0m11:56:21
+[2025-11-19T11:56:24.242+0000] {subprocess.py:93} INFO - [0m11:56:24  Concurrency: 1 threads (target='prod')
+[2025-11-19T11:56:24.246+0000] {subprocess.py:93} INFO - [0m11:56:24
+[2025-11-19T11:56:24.264+0000] {subprocess.py:93} INFO - [0m11:56:24  1 of 3 START sql table model dwh_prod_intermediate.int_rates_usdt .............. [RUN]
+[2025-11-19T11:56:29.332+0000] {subprocess.py:93} INFO - [0m11:56:29  1 of 3 OK created sql table model dwh_prod_intermediate.int_rates_usdt ......... [[32mCREATE TABLE (29.8k rows, 3.3 MiB processed)[0m in 5.06s]
+[2025-11-19T11:56:29.338+0000] {subprocess.py:93} INFO - [0m11:56:29  2 of 3 START sql table model dwh_prod_intermediate.int_users_scd2 .............. [RUN]
+[2025-11-19T11:56:32.110+0000] {subprocess.py:93} INFO - [0m11:56:32  2 of 3 OK created sql table model dwh_prod_intermediate.int_users_scd2 ......... [[32mCREATE TABLE (272.0 rows, 8.5 KiB processed)[0m in 2.77s]
+[2025-11-19T11:56:32.114+0000] {subprocess.py:93} INFO - [0m11:56:32  3 of 3 START sql table model dwh_prod_intermediate.int_transactions_with_rates . [RUN]
+[2025-11-19T11:56:36.868+0000] {local_task_job_runner.py:313} WARNING - State of this instance has been externally set to restarting. Terminating instance.
+[2025-11-19T11:56:36.870+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-11-19T11:56:36.882+0000] {process_utils.py:132} INFO - Sending 15 to group 242. PIDs of all processes in the group: [243, 242]
+[2025-11-19T11:56:36.884+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 242
+[2025-11-19T11:56:36.886+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-11-19T11:56:36.887+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2025-11-19T11:56:36.898+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-19T11:56:36.941+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 234, in execute
+    result = self.subprocess_hook.run_command(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/hooks/subprocess.py", line 91, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b""):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2613, in signal_handler
+    raise AirflowTaskTerminated("Task received SIGTERM signal")
+airflow.exceptions.AirflowTaskTerminated: Task received SIGTERM signal
+[2025-11-19T11:56:36.974+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=dbt_finance, task_id=dbt_run_finance_intermediate, run_id=scheduled__2025-11-18T00:00:00+00:00, execution_date=20251118T000000, start_date=20251119T115606, end_date=20251119T115636
+[2025-11-19T11:56:37.076+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=242, status='terminated', exitcode=2, started='11:56:06') (242) terminated with exit code 2
+[2025-11-19T11:56:37.084+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=243, status='terminated', started='11:56:06') (243) terminated with exit code None

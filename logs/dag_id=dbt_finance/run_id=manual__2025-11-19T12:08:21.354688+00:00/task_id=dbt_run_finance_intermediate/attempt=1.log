@@ -1,0 +1,39 @@
+[2025-11-19T12:20:18.690+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-19T12:20:18.731+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_finance.dbt_run_finance_intermediate manual__2025-11-19T12:08:21.354688+00:00 [queued]>
+[2025-11-19T12:20:18.743+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_finance.dbt_run_finance_intermediate manual__2025-11-19T12:08:21.354688+00:00 [queued]>
+[2025-11-19T12:20:18.744+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-11-19T12:20:18.762+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_run_finance_intermediate> on 2025-11-19 12:08:21.354688+00:00
+[2025-11-19T12:20:18.770+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=318) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-19T12:20:18.769+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_finance', 'dbt_run_finance_intermediate', 'manual__2025-11-19T12:08:21.354688+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/dbt_finance.py', '--cfg-path', '/tmp/tmp4u22_398']
+[2025-11-19T12:20:18.772+0000] {standard_task_runner.py:64} INFO - Started process 319 to run task
+[2025-11-19T12:20:18.772+0000] {standard_task_runner.py:91} INFO - Job 35: Subtask dbt_run_finance_intermediate
+[2025-11-19T12:20:18.835+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_finance.dbt_run_finance_intermediate manual__2025-11-19T12:08:21.354688+00:00 [running]> on host 51d2cd8bcdaf
+[2025-11-19T12:20:18.951+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='tam.dang' AIRFLOW_CTX_DAG_ID='dbt_finance' AIRFLOW_CTX_TASK_ID='dbt_run_finance_intermediate' AIRFLOW_CTX_EXECUTION_DATE='2025-11-19T12:08:21.354688+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-19T12:08:21.354688+00:00'
+[2025-11-19T12:20:18.955+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-19T12:20:18.994+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-19T12:20:18.996+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/*** && dbt run --select finance.intermediate --target prod']
+[2025-11-19T12:20:19.006+0000] {subprocess.py:86} INFO - Output:
+[2025-11-19T12:20:22.401+0000] {subprocess.py:93} INFO - [0m12:20:22  Running with dbt=1.7.19
+[2025-11-19T12:20:23.610+0000] {subprocess.py:93} INFO - [0m12:20:23  Registered adapter: bigquery=1.7.0
+[2025-11-19T12:20:23.713+0000] {subprocess.py:93} INFO - [0m12:20:23  Found 12 models, 18 tests, 3 sources, 0 exposures, 0 metrics, 561 macros, 0 groups, 0 semantic models
+[2025-11-19T12:20:23.718+0000] {subprocess.py:93} INFO - [0m12:20:23
+[2025-11-19T12:20:26.484+0000] {subprocess.py:93} INFO - [0m12:20:26  Concurrency: 1 threads (target='prod')
+[2025-11-19T12:20:26.488+0000] {subprocess.py:93} INFO - [0m12:20:26
+[2025-11-19T12:20:26.508+0000] {subprocess.py:93} INFO - [0m12:20:26  1 of 3 START sql table model dwh_prod_intermediate.int_rates_usdt .............. [RUN]
+[2025-11-19T12:20:32.650+0000] {subprocess.py:93} INFO - [0m12:20:32  1 of 3 OK created sql table model dwh_prod_intermediate.int_rates_usdt ......... [[32mCREATE TABLE (29.8k rows, 3.3 MiB processed)[0m in 6.14s]
+[2025-11-19T12:20:32.655+0000] {subprocess.py:93} INFO - [0m12:20:32  2 of 3 START sql table model dwh_prod_intermediate.int_users_scd2 .............. [RUN]
+[2025-11-19T12:20:35.826+0000] {subprocess.py:93} INFO - [0m12:20:35  2 of 3 OK created sql table model dwh_prod_intermediate.int_users_scd2 ......... [[32mCREATE TABLE (272.0 rows, 8.5 KiB processed)[0m in 3.17s]
+[2025-11-19T12:20:35.834+0000] {subprocess.py:93} INFO - [0m12:20:35  3 of 3 START sql table model dwh_prod_intermediate.int_transactions_with_rates . [RUN]
+[2025-11-19T12:20:41.059+0000] {subprocess.py:93} INFO - [0m12:20:41  3 of 3 OK created sql table model dwh_prod_intermediate.int_transactions_with_rates  [[32mCREATE TABLE (93.0 rows, 676.7 KiB processed)[0m in 5.22s]
+[2025-11-19T12:20:41.070+0000] {subprocess.py:93} INFO - [0m12:20:41
+[2025-11-19T12:20:41.072+0000] {subprocess.py:93} INFO - [0m12:20:41  Finished running 3 table models in 0 hours 0 minutes and 17.35 seconds (17.35s).
+[2025-11-19T12:20:41.090+0000] {subprocess.py:93} INFO - [0m12:20:41
+[2025-11-19T12:20:41.091+0000] {subprocess.py:93} INFO - [0m12:20:41  [32mCompleted successfully[0m
+[2025-11-19T12:20:41.093+0000] {subprocess.py:93} INFO - [0m12:20:41
+[2025-11-19T12:20:41.094+0000] {subprocess.py:93} INFO - [0m12:20:41  Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[2025-11-19T12:20:42.593+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-19T12:20:42.594+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-19T12:20:42.625+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dbt_finance, task_id=dbt_run_finance_intermediate, run_id=manual__2025-11-19T12:08:21.354688+00:00, execution_date=20251119T120821, start_date=20251119T122018, end_date=20251119T122042
+[2025-11-19T12:20:42.660+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-11-19T12:20:42.691+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-11-19T12:20:42.694+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
